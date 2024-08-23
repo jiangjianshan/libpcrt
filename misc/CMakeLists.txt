@@ -1,0 +1,14 @@
+set(MISC_SRCS
+  misc/dirent.c
+  misc/dirname.c
+  misc/ftruncate.c
+  misc/getopt.c
+  misc/gettimeofday.c
+  misc/mingw_usleep.c
+  misc/sleep.c
+  misc/tdelete.c
+  misc/tdestroy.c
+  misc/tfind.c
+  misc/tsearch.c
+  misc/twalk.c
+  PARENT_SCOPE)
