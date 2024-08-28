@@ -29,6 +29,17 @@ _CRT_BEGIN_C_HEADER
 #endif
 #endif
 
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
+/* On native Windows with MSVC, get the 'struct timeval' type.
+   Also, on native Windows with a 64-bit time_t, where we are overriding the
+   'struct timeval' type, get all declarations of system functions whose
+   signature contains 'struct timeval'.  */
+#if !defined _WINSOCK2API_ && !defined _WINSOCKAPI_
+# include <winsock2.h>
+#endif
+
 #ifndef _TIMEZONE_DEFINED /* also in sys/time.h */
 #define _TIMEZONE_DEFINED
 struct timezone {
